@@ -125,27 +125,3 @@ extension ParkingSchemeController: ParkingSchemeViewModelDelegate {
     }
     
 }
-
-//MARK:- ParkingSchemeViewDelegate
-
-extension ParkingSchemeController: SchemeViewDelegate {
-    
-}
-
-//MARK:- Темная тема
-
-extension ParkingSchemeController: DarkModeSupportable {
-    
-    func enableDarkMode() {
-        view.backgroundColor = .blackDarken
-        closeButton.setImage(UIImage(named: "close_icon"), for: .normal)
-        titleLabel.textColor = .white
-    }
-    
-    func disableDarkMode() {
-        view.backgroundColor = .white
-        closeButton.setImage(UIImage(named: "close_black_icon"), for: .normal)
-        titleLabel.textColor = .blackDarken
-    }
-    
-}

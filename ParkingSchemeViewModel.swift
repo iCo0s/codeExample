@@ -59,21 +59,8 @@ final class ParkingSchemeViewModel {
     // MARK:- Преобразование моделей
     
     private func mapSchemeDTOModel() {
-        var schemeUI: ParkingSchemeModel = ParkingSchemeModel(parkingPlaces: [], lines: [])
-        guard let scheme = schemeDTO, scheme.floors.count != 0 else { return }
-        schemeUI.lines = scheme.floors[0].parkingLines.map {
-            ParkingSchemeModel.Line(points: $0.points.map { CGPoint(x: $0.x, y: $0.y) })
-        }
-        schemeUI.parkingPlaces = scheme.floors[0].parkingLots.map {
-            let origin = CGPoint(x: $0.x.cgFloat, y: $0.y.cgFloat)
-            return ParkingSchemeModel.Parking(
-                origin: origin,
-                size: parkingPlaceSize,
-                angle: $0.angle.cgFloat,
-                name: $0.name
-            )
-        }
-        schemeModel = schemeUI
+        
+//        code example
     }
     
 }
